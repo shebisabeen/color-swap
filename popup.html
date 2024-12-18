@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Color Swap</title>
+  <style>
+    body {
+      width: 220px;
+      font-family: Arial, sans-serif;
+      padding: 10px;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+    h3 {
+      margin: 10px 0;
+      font-size: 16px;
+      color: #333;
+    }
+    input, button {
+      margin: 5px 0;
+      width: 40%;
+      padding: 1px;
+      border-radius: 4px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #007acc;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005f99;
+    }
+    .theme-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 10px 0;
+      justify-content: center;
+    }
+    .theme-pair {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      border: 1px solid #333;
+      border-radius: 4px;
+      padding: 2px;
+      transition: transform 0.2s;
+    }
+    .theme-pair:hover {
+      transform: scale(1.05);
+    }
+    .theme-square {
+      width: 20px;
+      height: 20px;
+      margin: 0 2px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .toggle-container {
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+      justify-content: center;
+    }
+    .toggle-label {
+      margin-left: 10px;
+    }
+    /* Toggle switch styling */
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 20px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 20px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+    input:checked + .slider:before {
+      transform: translateX(20px);
+    }
+    .icon {
+      display: block;
+      margin: 0 auto 10px;
+      width: 50px;
+      height: 50px;
+    }
+    .separator {
+      border-top: 1px solid #ccc;
+      margin: 15px 0;
+    }
+  </style>
+</head>
+<body>
+  <img src="icon16.png" alt="Extension Icon" class="icon">
+  <h3>Color Swap</h3>
+  <label for="bgColor">Background:</label>
+  <input type="color" id="bgColor" name="bgColor" value="#ADD8E6"><br>
+  <label for="textColor">Text:</label>
+  <input type="color" id="textColor" name="textColor" value="#000000"><br>
+  <button id="changeColors">Apply</button>
+  <button id="resetColors">Reset</button>
+  
+  <h3>Sample Themes</h3>
+  <div class="theme-container">
+    <div id="theme1" class="theme-pair">
+      <div class="theme-square" style="background-color: #f0f0f0;"></div>
+      <div class="theme-square" style="background-color: #333;"></div>
+    </div>
+    <div id="theme2" class="theme-pair">
+      <div class="theme-square" style="background-color: #333;"></div>
+      <div class="theme-square" style="background-color: #f0f0f0;"></div>
+    </div>
+    <div id="theme3" class="theme-pair">
+      <div class="theme-square" style="background-color: #ffebcd;"></div>
+      <div class="theme-square" style="background-color: #8b4513;"></div>
+    </div>
+    <div id="theme4" class="theme-pair">
+      <div class="theme-square" style="background-color: #282c34;"></div>
+      <div class="theme-square" style="background-color: #61dafb;"></div>
+    </div>
+    <div id="theme5" class="theme-pair">
+      <div class="theme-square" style="background-color: #ffffff;"></div>
+      <div class="theme-square" style="background-color: #007acc;"></div>
+    </div>
+    <div id="theme6" class="theme-pair">
+      <div class="theme-square" style="background-color: #2e8b57;"></div>
+      <div class="theme-square" style="background-color: #ffffff;"></div>
+    </div>
+    <div id="theme7" class="theme-pair">
+      <div class="theme-square" style="background-color: #ff6347;"></div>
+      <div class="theme-square" style="background-color: #ffffff;"></div>
+    </div>
+    <div id="theme8" class="theme-pair">
+      <div class="theme-square" style="background-color: #8a2be2;"></div>
+      <div class="theme-square" style="background-color: #ffffff;"></div>
+    </div>
+    <div id="theme9" class="theme-pair">
+      <div class="theme-square" style="background-color: #f5f5dc;"></div>
+      <div class="theme-square" style="background-color: #000000;"></div>
+    </div>
+  </div>
+
+  <div class="separator"></div> <!-- Line above the toggle -->
+
+  <div class="toggle-container">
+    <label class="switch">
+      <input type="checkbox" id="toggleExtension">
+      <span class="slider"></span>
+    </label>
+    <span class="toggle-label">Enable Extension</span>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
