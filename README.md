@@ -29,6 +29,10 @@
 ## Screenshots
 
 ![ColorSwap Interface](screenshots/image.png)
+![Sample Screenshot](screenshots/colorswap%20ss1.png)
+![Sample Screenshot](screenshots/colorswap%20ss2.png)
+![Sample Screenshot](screenshots/colorswap%20ss3.png)
+![Sample Screenshot](screenshots/colorswap%20ss4.png)
 
 ## Contributing
 
@@ -40,6 +44,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-For questions or feedback, please contact Sabeen at [hello@sabeencs.com].
+For questions or feedback, please contact Sabeen at [hello@sabeencs.com](mailto:hello@sabeencs.com).
 
 ---
